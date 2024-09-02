@@ -12,7 +12,7 @@ Windows [install](https://winstall.app/apps/cURL.cURL)
 
 Mac [install](https://formulae.brew.sh/formula/curl)
 
-2. Install jqssss
+2. Install jq
 
 Windows [install](https://winstall.app/apps/jqlang.jq)
 
