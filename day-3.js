@@ -93,12 +93,17 @@ getFirstAbility();
 
 // INSTRUCTIONS:
 // Create a function called `getFirstItem` that fetches data for the first Item from the Pokémon API.
-// Log the name and color of this Item to the console. (Hint: Item data has `color` property.)
+// Log the name and cost of this Item to the console. (Hint: Item data has `cost` property.)
 // Note: use /api/v2/item to GET an item object
 
 // TODO: Write your function here to fetch and log the name and color of the first Item
-
-
+async function getFirstItem() {
+  let url = 'https://pokeapi.co/api/v2/item/1';
+  let response = await fetch(url);
+  let data = await response.json();
+  console.log('Cost:', data.cost);
+}
+getFirstItem();
 // EXERCISE 5: Fetch and Log the Name of the First Type
 
 // INSTRUCTIONS:
@@ -107,6 +112,14 @@ getFirstAbility();
 // Note: use /api/v2/type to GET a type object
 
 // TODO: Write your function here to fetch and log the name of the first Type
+async function getFirstType() {
+  let url = 'https://pokeapi.co/api/v2/type/1';
+  let response = await fetch(url);
+  let data = await response.json();
+  console.log('Type:', data.name);
+}
+
+getFirstType();
 
 
 // Summary:
