@@ -32,7 +32,7 @@ async function fetchBerryById(berryId) {
   const response = await fetch(url);
   const data = await response.json();
   console.log(`Berry Name: ${data.name}`);
-  console.log(`Flavor: ${data.flavor}`);
+  console.log(`Flavor: ${data.flavors[0].flavor.name}`);
 }
 
 // Fetch and log data for Berry with ID 1
@@ -46,7 +46,14 @@ fetchBerryById(1);
 // Log the ability name and effect to the console.
 
 // TODO: Write your function here
-
+async function fetchAbilityById(abilityId) {
+  let url = `https://pokeapi.co/api/v2/ability/${abilityId}`;
+  let response = await fetch(url);
+  let data = await response.json();
+  console.log(`Pokemon Name: ${data.name}`);
+  console.log(`Ability: ${data.name}`);
+}
+fetchAbilityById(1);
 // EXERCISE 2: Fetch Item Data by ID
 
 // INSTRUCTIONS:
@@ -54,7 +61,14 @@ fetchBerryById(1);
 // Log the item name and its category to the console.
 
 // TODO: Write your function here
-
+async function fetchItemById(itemId) {
+  let url = `https://pokeapi.co/api/v2/item/${itemId}`;
+  let response = await fetch(url);
+  let data = await response.json();
+  console.log(`Pokemon Name: ${data.name}`);
+  console.log(`Item: ${data.name}`)
+}
+fetchItemById(25)
 // EXERCISE 3: Fetch Type Data by ID
 
 // INSTRUCTIONS:
@@ -62,6 +76,15 @@ fetchBerryById(1);
 // Log the type name and its damage relations to the console.
 
 // TODO: Write your function here
+async function fetchTypeById(typeId) {
+  let url = `https://pokeapi.co/api/v2/type/${typeId}`;
+  let response = await fetch(url);
+  let data = await response.json();
+  console.log(`Pokemon Name: ${data.name}`);
+  console.log(`Type: ${data.name}`);
+}
+fetchTypeById(3);
+
 
 // EXERCISE 4: Fetch Nature Data by ID
 
@@ -70,6 +93,14 @@ fetchBerryById(1);
 // Log the nature name and its characteristics to the console.
 
 // TODO: Write your function here
+async function fetchNatureById(natureId) {
+  let url = `https://pokeapi.co/api/v2/pokemon/${natureId}`;
+  let response = await fetch(url);
+  let data = await response.json();
+  console.log(`Pokemon Name: ${data.name}`);
+  console.log(`Nature: ${data.stats[0].stat.name}`);
+}
+fetchNatureById(6);
 
 // EXERCISE 5: Fetch Pokémon Data by IDs and print the abilities of the pokemon.
 
@@ -78,6 +109,14 @@ fetchBerryById(1);
 // print the name of the pokemon and the abilities of the pokemon.
 // Hint: abilities is an array.
 // TODO: Write your function here
+async function fetchPokemonByIds2(pokemonId2) {
+  let url = `https://pokeapi.co/api/v2/pokemon/${pokemonId2}`;
+  let response = await fetch(url);
+  let data = await response.json();
+  console.log(`Pokemon Name: ${data.name}`);
+  console.log(`Ability: ${data.name}`);
+}
+fetchPokemonByIds2(3);
 
 // Summary:
 // These exercises help you practice creating functions to fetch data by ID from various endpoints of the Pokémon API.
